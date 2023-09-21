@@ -1,13 +1,47 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+	--primary-color: #46139f;
+	--secondary-color: #ff7f50;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Hiding the Scrollbar */
+*::-webkit-scrollbar {
+	display: none;
+}
+
+/* Set the Font-Family */
+body {
+	font-family: "Inter", sans-serif;
+}
+
+.modal {
+	overflow-y: auto;
+}
+
+.custom-btn-primary {
+	background-color: var(--primary-color);
+	color: #fff;
+}
+
+.custom-btn-secondary {
+	background-color: var(--secondary-color);
+	color: #fff;
+}
+
+.custom-btn-primary:hover,
+.custom-btn-secondary:hover {
+	color: white;
+}
+
+.custom-btn-outline-primary {
+	background-color: #fff;
+	border: 1px solid var(--primary-color);
+	color: #fff;
+}
+
+.custom-btn-outline-secondary {
+	background-color: #fff;
+	border: 1px solid var(--secondary-color);
+	color: #fff;
 }

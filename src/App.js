@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ContactsProvider } from "./pages/contacts/provider";
+import Contacts from "./pages/contacts";
+import Home from "./pages/home";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route exact path="/" element={<Home />}>
+					<Route exact path="/contacts">
+
+						<Route exact index element={
+							<ContactsProvider>
+								<Contacts />
+							</ContactsProvider>
+						} />
+						{/* For ALL Countries */}
+
+						{/* For "US" Country (Country ID: 226)*/}
+						<Route path=":code" element={
+							<ContactsProvider>
+								<Contacts />
+							</ContactsProvider>
+						} />
+					</Route>
+				</Route>
+			</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App;
